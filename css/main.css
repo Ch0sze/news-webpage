@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap');
+
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #3c62b9;
+}
+
+/*
+body .title{
+    position:absolute;
+    writing-mode: vertical-lr;
+    color: white;
+    font-size: 50px;
+}
+*/
+.column1,
+.column2 {
+    flex: 1;
+}
+
+@media screen and (max-width: 1250px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+/*
+selection {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+section::before,
+section::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    animation: animate 5s ease-in-out infinite;
+}
+
+section::before {
+    top: 10%;
+    right: 10%;
+    background: linear-gradient(#f9d924, #ff2c24);
+}
+
+section::after {
+    bottom: 10%;
+    left: 15%;
+    background: linear-gradient(#4f85f9, #2824ff);
+    animation-delay: -2.5s;
+}
+
+@keyframes animate {
+    0%,100%
+    {
+        transform:translateY(20px);
+    }
+    50%
+    {
+        transform: translateY(-20px);
+    }
+}
+*/
+.container {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    width: 60vw;
+    min-width: 420px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+}
+
+.column {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    margin: auto;
+    margin-top: 0;
+}
+
+.time-box {
+    border-radius: 5ch;
+    width: 350px;
+    height: 150px;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+
+    display: flex;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.time-box .clock {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    height: 100%;
+}
+
+.time-box .clock h2 {
+    font-family: consolas;
+    color: #fff;
+    font-size: 2.3em;
+    line-height: 150%;
+}
+
+.time-box .clock h2:nth-child(odd) {
+    padding: 5px 15px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    margin: 0 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#session {
+    position: relative;
+    top: -28px;
+    font-size: 0.8em;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+#box {
+    transition: transform 0.3s ease;
+    margin: 30px;
+
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard syntax */
+}
+
+#box:hover {
+    cursor: pointer;
+    transform: scale(1.007);
+}
+
+.weather-box {
+    border-radius: 5ch;
+    width: 350px;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.weather-icon {
+    width: 120px;
+    margin-top: 20px;
+}
+
+.weather h1 {
+    font-size: 55px;
+    font-weight: 500;
+}
+
+.weather h2 {
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: -10px;
+}
+
+.details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px;
+}
+
+.col {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.col img {
+    width: 37px;
+    margin-right: 10px;
+}
+
+.col .humidity {
+    font-size: 23px;
+}
+
+.col .wind {
+    font-size: 23px;
+}
+
+.col p {
+    font-size: 14px;
+}
+
+.newsBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5ch;
+    width: 350px;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    color: #fff;
+
+    position: relative;
+    display: inline-block;
+}
+
+.newsBox .imgBox{
+    opacity: 0;
+}
+
+.newsBox:hover .imgBox {
+    opacity: 1;
+}
+
+.imgBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 5ch;
+}
